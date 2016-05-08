@@ -1,0 +1,20 @@
+<div class="navbar navbar-default navbar-static-top"
+     role="navigation" bs-navbar>
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="root.home">
+            <span class="glyphicon glyphicon-film"></span>
+            Show<strong>Trackr</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a sref="root.home">Home</a></li>
+        <li><a ui-sref='root.add'>Add</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right" ng-if="!vm.currentUser">
+        <li><a ui-sref="root.login">Login</a></li>
+        <li><a ui-sref="root.signup">Sign up</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right" ng-if="vm.currentUser">
+        <li class="navbar-text" ng-bind="vm.currentUser.email"></li>
+        <li><a ng-click="vm.logout()">Logout</a></li>
+    </ul>
+</div>

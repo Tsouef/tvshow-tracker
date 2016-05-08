@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Add TV Show</div>
+        <div class="panel-body">
+            <form class="form" method="post" ng-submit="vm.addShow()" name="vm.addForm">
+                <div class="form-group" ng-class="{ 'has-success' : vm.addForm.showName.$valid && vm.addForm.showName.$dirty, 'has-error' :vm.addForm.showName.$invalid && vm.addForm.showName.$dirty }">
+                    <input class="form-control" type="text" name="vm.showName" ng-model="vm.showName" placeholder="Enter TV show name" required autofocus>
+                    <div class="help-block text-danger" ng-if="vm.addForm.showName.$dirty" ng-messages="vm.addForm.showName.$error">
+                        <div ng-message="required">TV show name is required.</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" ng-disabled="vm.addForm.$invalid">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
